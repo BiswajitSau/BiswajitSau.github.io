@@ -1,68 +1,207 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-  <title>Biswajit Sau</title>
+<!DOCTYPE html>
+<html lang="en">
 
- <style>
-  *{margin: 0; padding: 0;
-  box-sizing: border-box;}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid + Media Queries</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas:
+            'navbar navbar navbar navbar'
+            'section section section aside'
+            'footer footer footer footer ';
+    }
 
-  main{
-    width: 100%; margin: 500px;
-    border: 2px solid rgb(156, 25, 25);
-    display: grid;
+    @media only screen and (max-width:300px) {
+        body {
+            background-color: red;
+        }
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer ';
+        }
+        aside{
+            display: none;
+        }
+        span{
+            display: block;
+            text-align: center;
+        }
+    }
 
-    grid-template-rows: 60px 100px 200px 60px;
-    grid-template-columns: repeat(3, 1fr)150px;
-    grid-gap: 20px;
+    @media only screen and (min-width: 300px) and (max-width:500px) {
+        body {
+            background-color: blue;
+        }
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer ';
+        }
+        aside{
+            display: none;
+        }
+        span{
+            display: block;
+            text-align: center;
+        }
+    }
 
-  }
-  .div1{ background-color:#ff4757;
-        grid-column: 1/-1;}
-  .div2{ background-color:#2ed573;}
-  .div3{ background-color:#1e90ff;}
-  .div4{ background-color:#5352ed;}
-  .div5{ background-color:#2f3542;
-        grid-row:2/4; grid-column:4/5;}
-  .div6{ background-color:#ffa502;
-        grid-column: 1/4;}
-  .div7{ background-color:#00d2d3;
-        grid-column: 1/-1;}
+    @media (min-width: 500px) and (max-width:800px) {
+        body {
+            background-color: yellow;
+        }
 
- </style>
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer ';
+        }
+        span{
+            display: block;
+            text-align: center;
+        }
+    }
 
- </head>
+    @media (min-width: 800px) {
+        body {
+            background-color: green;
+        }
+    }
 
- <body>
+    .bdr {
+        border: 2px solid black;
+        padding: 10px 23px;
+        background-color: wheat;
+    }
 
-  <div1> <h1>Wolcom My Webside</h1> </div>
-   <main>
-        <div class="div1"> header
-            
-        </div>
-        <div class="div2"> box1
-          <iframe width="100" height="100" src="https://www.youtube.com/embed/7OrbZY7n_oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    nav {
+        grid-area: navbar;
+    }
 
-        </div>
-        <div class="div3"> box2
-                <iframe width="100" height="100" src="https://www.youtube.com/embed/7OrbZY7n_oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 
-       </div>
-        <div class="div4"> box3
-                   <iframe width="100" height="100" src="https://www.youtube.com/embed/7OrbZY7n_oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    section {
+        grid-area: section;
+    }
 
-        </div>
-        <div class="div5"> sidebar
-        </div>
-        <div class="div6"> main
-         
-        
+    aside {
+        grid-area: aside;
+    }
 
-        </div>
-        <div class="div7">footer
-        </div>
-        
-   </main>
-       </body> 
+    footer {
+        grid-area: footer;
+        text-align: center;
+    }
+</style>
 
- </html>
+<body>
+    <div class="container ">
+        <nav class="bdr">
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+            <span>Contact</span> 
+        </nav>
+        <section class="bdr">
+            <h2>Learn CSS in hindi</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque nemo cupiditate distinctio et expedita. Delectus quaerat accusamus inventore tenetur error quam minus, provident fugit repellat necessitatibus? Architecto itaque quidem sequi blanditiis, facere accusantium hic.lorem122 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi dignissimos ut rerum aut. Fuga delectus suscipit debitis libero. Itaque, ipsum dignissimos consequatur repellat distinctio enim dolorem, facilis esse dolorum illum earum aliquid numquam blanditiis ipsam reiciendis iure nobis quo cum maiores aperiam pariatur. Quas aliquam, quae non rerum, architecto eligendi blanditiis officia placeat dolor soluta explicabo. Voluptatem tenetur perspiciatis neque quidem ducimus velit id explicabo, illo magni quis voluptatum. Tempora quod, dicta illum ratione quo at dolores cupiditate aperiam laboriosam amet sequi quaerat similique incidunt eius deleniti deserunt accusamus eligendi nemo est veritatis fugiat ducimus! Modi ut vel et nihil asperiores mollitia obcaecati, neque accusantium corrupti, quisquam voluptatem rem? Possimus tempore et fugit cumque culpa aliquam doloremque odio hic, cum, minima nostrum!</p>
+        </section>
+        <aside class="bdr">
+            <h1>More about us</h1>
+        </aside>
+    </div>
+    <footer class="bdr">Copyright CodeWithHarry 2020</footer>
+
+</body>
+
+</html>
+
+aside{
+            display: none;
+        }
+
+        .container {
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer ';
+        }
+        nav {
+        grid-area: navbar;
+    }
+    section {
+        grid-area: section;
+    }
+    aside {
+        grid-area: aside;
+    }
+    footer {
+        grid-area: footer;
+        text-align: center;
+    }
+
+    grid-template-areas:
+            'navbar navbar navbar navbar'
+            'section section section aside'
+            'footer footer footer footer ';
+
+            .bdr {
+        border: 2px solid black;
+        padding: 10px 23px;
+        background-color: wheat;
+    }
+
+
+    .container {
+        display: grid;
+        grid-gap: 1rem;
+}
+
+<body>
+    <div class="container ">
+        <nav class="bdr">
+            <span>Home</span>
+            <span>About</span>
+            <span>Services</span>
+            <span>Contact</span> 
+        </nav>
+        <section class="bdr">
+            <h2>Learn CSS in hindi</h2>
+        </section>
+        <aside class="bdr">
+            <h1>More about us</h1>
+        </aside>
+    </div>
+    <footer class="bdr">Copyright CodeWithHarry 2020</footer>
+</body>
+
+
+@media only screen and (max-width:300px) {
+        body {
+            background-color: red;
+        }
+@media only screen and (min-width: 300px) and (max-width:500px) {
+        body {
+            background-color: blue;
+        }
+@media (min-width: 500px) and (max-width:800px) {
+        body {
+            background-color: yellow;
+        }
+@media (min-width: 800px) {
+        body {
+            background-color: green;
+        }
+    }
