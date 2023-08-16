@@ -132,7 +132,7 @@ a:active{
 	box-shadow: 0px 10px 10px 10px gray;
 }
 .asideimg{
-	width: 100px;
+	width: 120px;
 	height: auto;
 
 }
@@ -157,16 +157,16 @@ a:active{
 	float: right;
 }
 #content iframe{
-	width: 50px;
+	width: 100px;
 	border: solid #16b138;
 	margin: 10px;
 }
 #aside iframe{
-	width: 50px;
+	width: 100px;
 
 }
 #footer iframe{
-	width: 50px;
+	width: 100px;
 	height: auto;
 	border: solid #0626f5;
 	margin: 19px;
